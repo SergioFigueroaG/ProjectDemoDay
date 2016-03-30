@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>EventApp</title>
+  <title>EventApp </title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<!-- header -->
+<header>
+<!-- login in header -->
+<% if current_user %>
+<div id="logo">
+	<img src="../assets/images/logo.png">
+</div>
+<div class="search">
+	<input type="search" name="busqueda" placeholder="Buscar evento..."> <input type="submit" value="Enviar">
+</div>
+<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+<!-- end login in -->
 
+<!-- login out header -->
+<% else %>
+<div id="logo">
+	<img src="../assets/images/logo.png">
+</div>
+<div class="search">
+	<input type="search" name="busqueda" placeholder="Buscar evento..."> <input type="submit" value="Enviar">
+</div>
+<div class="login_header">
+	<%= link_to 'Login', new_user_session_path %>
+</div>
+<!-- login out end -->
+<% end %>
+
+
+</header>
+<!-- end header -->
 <%= yield %>
 
 </body>
