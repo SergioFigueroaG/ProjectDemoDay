@@ -7,6 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+ 	<% if user_signed_in? %>
+			<div id="logo" alt="Logo">
+				<img src="/assets/images/logo.png">
+			</div>
+
+
+	 	<% else%>
+			<div id="logo" alt="Logo">
+				<img src="/assets/images/logo.png">
+			</div>
+	<% end %>
+
+</header>
 
 <%= yield %>
 
