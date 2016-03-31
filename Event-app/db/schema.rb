@@ -11,7 +11,64 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160330213912) do
+ActiveRecord::Schema.define(version: 20160331062539) do
+
+  create_table "events", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "date_i"
+    t.datetime "date_f"
+    t.time     "hour_i"
+    t.time     "hour_f"
+    t.string   "name_place"
+    t.string   "address"
+    t.string   "img"
+    t.boolean  "private"
+    t.integer  "n_confirm"
+    t.integer  "capacity"
+    t.boolean  "need_partner"
+    t.text     "des_partner"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.integer  "score"
+    t.string   "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "inviteds", force: :cascade do |t|
+    t.integer  "event_id"
+    t.integer  "user_id"
+    t.string   "correo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "partner_events", force: :cascade do |t|
+    t.integer  "event_id"
+    t.integer  "user_id"
+    t.text     "description"
+    t.integer  "state"
+    t.string   "type_partners"
+    t.string   "correo"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "user_events", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.integer  "state"
+    t.boolean  "like"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
