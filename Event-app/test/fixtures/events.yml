@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  date_i: 2016-03-31 01:19:33
+  date_f: 2016-03-31 01:19:33
+  hour_i: 2016-03-31 01:19:33
+  hour_f: 2016-03-31 01:19:33
+  name_place: MyString
+  address: MyString
+  img: MyString
+  private: false
+  n_confirm: 1
+  capacity: 1
+  need_partner: false
+  des_partner: MyText
+  user_id: 1
+
+two:
+  title: MyString
+  description: MyText
+  date_i: 2016-03-31 01:19:33
+  date_f: 2016-03-31 01:19:33
+  hour_i: 2016-03-31 01:19:33
+  hour_f: 2016-03-31 01:19:33
+  name_place: MyString
+  address: MyString
+  img: MyString
+  private: false
+  n_confirm: 1
+  capacity: 1
+  need_partner: false
+  des_partner: MyText
+  user_id: 1

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @partner_event.event_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @partner_event.user_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @partner_event.description %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @partner_event.state %>
+</p>
+
+<p>
+  <strong>Type partners:</strong>
+  <%= @partner_event.type_partners %>
+</p>
+
+<p>
+  <strong>Correo:</strong>
+  <%= @partner_event.correo %>
+</p>
+
+<%= link_to 'Edit', edit_partner_event_path(@partner_event) %> |
+<%= link_to 'Back', partner_events_path %>
