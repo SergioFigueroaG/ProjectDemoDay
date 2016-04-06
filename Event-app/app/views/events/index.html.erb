@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Date i</th>
+      <th>Date f</th>
+      <th>Hour i</th>
+      <th>Hour f</th>
+      <th>Name place</th>
+      <th>Address</th>
+      <th>Img</th>
+      <th>Private</th>
+      <th>N confirm</th>
+      <th>Capacity</th>
+      <th>Need partner</th>
+      <th>Des partner</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.title %></td>
+        <td><%= event.description %></td>
+        <td><%= event.date_i %></td>
+        <td><%= event.date_f %></td>
+        <td><%= event.hour_i %></td>
+        <td><%= event.hour_f %></td>
+        <td><%= event.name_place %></td>
+        <td><%= event.address %></td>
+        <td><%= event.img %></td>
+        <td><%= event.private %></td>
+        <td><%= event.n_confirm %></td>
+        <td><%= event.capacity %></td>
+        <td><%= event.need_partner %></td>
+        <td><%= event.des_partner %></td>
+        <td><%= event.user_id %></td>
+        <td><%= link_to 'Show', event %></td>
+        <td><%= link_to 'Edit', edit_event_path(event) %></td>
+        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Event', new_event_path %>

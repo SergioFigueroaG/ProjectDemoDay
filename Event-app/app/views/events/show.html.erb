@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @event.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @event.description %>
+</p>
+
+<p>
+  <strong>Date i:</strong>
+  <%= @event.date_i %>
+</p>
+
+<p>
+  <strong>Date f:</strong>
+  <%= @event.date_f %>
+</p>
+
+<p>
+  <strong>Hour i:</strong>
+  <%= @event.hour_i %>
+</p>
+
+<p>
+  <strong>Hour f:</strong>
+  <%= @event.hour_f %>
+</p>
+
+<p>
+  <strong>Name place:</strong>
+  <%= @event.name_place %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @event.address %>
+</p>
+
+<p>
+  <strong>Img:</strong>
+  <%= @event.img %>
+</p>
+
+<p>
+  <strong>Private:</strong>
+  <%= @event.private %>
+</p>
+
+<p>
+  <strong>N confirm:</strong>
+  <%= @event.n_confirm %>
+</p>
+
+<p>
+  <strong>Capacity:</strong>
+  <%= @event.capacity %>
+</p>
+
+<p>
+  <strong>Need partner:</strong>
+  <%= @event.need_partner %>
+</p>
+
+<p>
+  <strong>Des partner:</strong>
+  <%= @event.des_partner %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @event.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
