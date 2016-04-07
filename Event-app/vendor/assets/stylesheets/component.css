@@ -57,7 +57,7 @@
 }
 
 .icon-envelope:before {
-	content: "\e000";
+	content: "\e8f8";
 }
 
 .icon-cart:before {
@@ -1344,11 +1344,11 @@
 }
 
 .button-success:before {
-	content: "\e001";
+	content: "\e9e0";
 }
 
 .button-success:after {
-	content: "Success!";
+	content: "Empecemos!";
 	-webkit-animation: moveUp 0.5s;
 	-moz-animation: moveUp 0.5s;
 	animation: moveUp 0.5s;
