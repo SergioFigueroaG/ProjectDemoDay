@@ -12,6 +12,14 @@
  *
  *= require_tree .
  *= require_self
+ *= require component
+
  */
-@import "bootstrap-sprockets"
-@import "bootstrap"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.header{
+  background: black;
+  opacity: 0.6;
+  padding: 10px 10px 10px 10px;
+}
