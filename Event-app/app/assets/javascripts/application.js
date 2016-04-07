@@ -16,3 +16,4 @@
 //= require bootstrap-sprockets
 //= require classie
 //= require modernizr.custom
+//= require button
