@@ -1,0 +1,29 @@
+<!-- <h2>Log in</h2> -->
+<p><%= notice %></p>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+<div class="col-md-5">
+  <!-- <%= f.label :email %><br /> -->
+  <%= f.email_field :email, autofocus: true, class:"sign_in form-control", placeholder:"Correo electrónico"  %>
+</div>
+
+<div class="col-md-5">
+  <!-- <%= f.label :password %><br /> -->
+  <%= f.password_field :password, autocomplete: "off",class:"sign_in form-control", placeholder:"Contraseña"  %>
+</div>
+<div class="actions col-md-1">
+  <%= f.submit  "dd" %>
+</div>
+<% if devise_mapping.rememberable? -%>
+<div class="col-md-5">
+  <%= f.check_box :remember_me  %>
+  <%= f.label :remember_me,"No cerrar sesión" %>
+</div>
+<% end -%>
+<div class="col-md-5">
+<%= link_to "Forgot your password?", new_password_path(resource_name)%>
+</div>
+<div class="col-md-12">
+  <%= render "devise/shared/links" %>
+</div>
+<% end %>

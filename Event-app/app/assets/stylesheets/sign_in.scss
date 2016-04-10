@@ -1,0 +1,13 @@
+// .sign_in.form-control::-moz-placeholder {
+//   color: #17aa56;;
+//   opacity: 1;
+// }
+// .sign_in.form-control:-ms-input-placeholder {
+//   color: #17aa56;;
+// }
+// .sign_in.form-control::-webkit-input-placeholder {
+//   color: #17aa56;;
+// }
+.sign_in.form-control:focus {
+  border-color: #17aa56;;
+}
