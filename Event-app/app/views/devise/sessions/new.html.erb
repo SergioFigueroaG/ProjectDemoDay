@@ -1,29 +1,49 @@
-<!-- <h2>Log in</h2> -->
-<p><%= notice %></p>
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div class="signin" >
+  <div class="login">
+    <p class="notice"><%= notice %></p>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <!-- <%= f.label :email %><br /> -->
+      <%= f.email_field :email, autofocus: true,required: true, class:"sign_in form-control login-input user", placeholder:"Correo electrónico"  %>
+    </div>
+    <div class="field">
+      <!-- <%= f.label :password %><br /> -->
+      <%= f.password_field :password, autocomplete: "off",class:"sign_in form-control login-input lock", placeholder:"Contraseña" ,onfocus:"this.value = '';" %>
+    </div>
+    <div class="forgot">
+    <div class="row ">
+      <% if devise_mapping.rememberable? -%>
 
-<div class="col-md-5">
-  <!-- <%= f.label :email %><br /> -->
-  <%= f.email_field :email, autofocus: true, class:"sign_in form-control", placeholder:"Correo electrónico"  %>
-</div>
+      <div class="field checkbox-inline col-xs-12  col-md-4 forget-res center-block" style="width: 60px;">
+        <label>
+        <%= f.check_box :remember_me %> Recordarme
+        </label>
+      </div>
+      <% end -%>
 
-<div class="col-md-5">
-  <!-- <%= f.label :password %><br /> -->
-  <%= f.password_field :password, autocomplete: "off",class:"sign_in form-control", placeholder:"Contraseña"  %>
+      <div class="field  col-xs-12 col-md-8 forget-res">
+        <%= link_to "¿olvidaste tu contraseña?", new_password_path(resource_name) %>
+      </div>
+      </div>
+      <div class="clear"> </div>
+    </div>
+    <div class="actions login-bwn">
+     <%= f.submit "Log in" %>
+   </div>
+     <% end %>
+    <div class="login-bottom">
+
+      
+      <p>Con tus redes sociales</p>
+
+      
+      <div class="sbutton">
+        <a class="tw" href="#"> <i class="anc-tw"> </i> <span>Twitter</span> </a>     
+        <a class="fa" href="#"> <i class="anc-fa"> </i> <span>Facebook</span></a>        
+        <a class="go" href="#"><i class="anc-go"> </i><span>Google+</span></a>
+      </div>
+      <h4>¿Aún no tienes una cuenta?  Registrate!</h4>
+      <div class="reg-bwn"><%= link_to "Registro", new_registration_path(resource_name) %></div>
+    </div>
+  </div>
 </div>
-<div class="actions col-md-1">
-  <%= f.submit  "dd" %>
-</div>
-<% if devise_mapping.rememberable? -%>
-<div class="col-md-5">
-  <%= f.check_box :remember_me  %>
-  <%= f.label :remember_me,"No cerrar sesión" %>
-</div>
-<% end -%>
-<div class="col-md-5">
-<%= link_to "Forgot your password?", new_password_path(resource_name)%>
-</div>
-<div class="col-md-12">
-  <%= render "devise/shared/links" %>
-</div>
-<% end %>

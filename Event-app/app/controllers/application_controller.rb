@@ -15,13 +15,14 @@ def store_location
       request.path != "/users/password/edit" &&
       request.path != "/users/confirmation" &&
       request.path != "/users/sign_out" &&
-      !request.xhr?) # don't store ajax calls
+      request.path != "/" &&
+            !request.xhr?) # don't store ajax calls
     session[:previous_url] = request.fullpath 
   end
 end
 
 def after_sign_in_path_for(resource)
-    events_path
+    session[:previous_url] ||   events_path
 end
 
 
