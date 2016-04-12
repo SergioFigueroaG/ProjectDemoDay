@@ -14,7 +14,8 @@
  *= require home
  *= require_self
  *= require component
-
+ *= require cover
+ *= require signin
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";

@@ -4,61 +4,44 @@
 html,
 body {
 	height: 100%;
+	min-height: 100%;
 }
-.carousel.vertical{
+.homepageone{
 	height: 100%;	
+	min-height: 100%;
 }
-.carousel.vertical .carousel-inner {
-	height: 100%;
-}
-.carousel.vertical .item {
-	-webkit-transition: 0.6s ease-in-out top;
-	-moz-transition:    0.6s ease-in-out top;
-	-ms-transition:     0.6s ease-in-out top;
-	-o-transition:      0.6s ease-in-out top;
-	left:               0;
-	height: 100%;
 
-}
-.carousel.vertical .active,
-.carousel.vertical .next.left,
-.carousel.vertical .prev.right    { top:     0; }
-.carousel.vertical .next,
-.carousel.vertical .active.right  { top:  100%; }
-.carousel.vertical .prev,
-.carousel.vertical .active.left   { top: -100%; }
 
-.carousel.vertical .carousel-indicators {
-	position: absolute;
+.homeindicator {
+	position: fixed;
 	bottom: 10px;
 	top: 44%;
 	z-index: 15;
-	width: 88px;
+	width: 30px;
 	padding-left: 0;
-	left: 31%;
+	left: 0;
+	margin-left:0;
 	text-align: center;
 	list-style: none;
 
 
 }
-.carousel.vertical .carousel-indicators li {
+.homeindicator li>a {
 	display: block;
 	width: 20px;
 	height: 20px;
 	margin: 1px;
-	background-color:black;
+	text-indent: -999px;
+	cursor: pointer;
+	background-color: #000 \9;
+	background-color: rgba(0, 0, 0, 0);
+	border: 1px solid #fff;
+	border-radius: 10px;
 }
-.carousel.vertical .carousel-indicators .active {
+.homeindicator .active {
 	width: 20px;
 	height: 20px;
+	margin: 0;
+	background-color: #fff;
 }	
-.carouselitemuno{
-	  overflow: hidden;
-}
-.namepage{
-	background-color:red;
-	margin:auto;
-	top: 30%;
-	width: 40%;
-	text-align:justify;
-}
+
