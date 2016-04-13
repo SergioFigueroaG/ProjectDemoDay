@@ -18878,3 +18878,82 @@ Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-12 23:42:03 -0500
 Processing by Devise::SessionsController#new as HTML
   Rendered devise/sessions/new.html.erb within layouts/application (84.0ms)
 Completed 200 OK in 310ms (Views: 306.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-13 15:58:12 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 26117ms (Views: 26069.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-13 15:58:38 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 217ms (Views: 215.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-13 15:58:39 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 166ms (Views: 165.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.self-eae9c920740840c2cc011ae53b0388203f8fd95d6ef2e20f0af4aac026a44b0c.css?body=1" for 127.0.0.1 at 2016-04-13 15:58:39 -0500
+
+
+Started GET "/assets/signin.self-9a21725c23c38b7071bf2e97146179614bb251c608bb351cb4d28cecac8b32d8.css?body=1" for 127.0.0.1 at 2016-04-13 15:58:39 -0500
+
+
+Started GET "/assets/cover.self-08929240cc6a296e329c0f61e4158ee1efcf97eba6b20d95709dd98ce145f243.css?body=1" for 127.0.0.1 at 2016-04-13 15:58:39 -0500
+
+
+Started GET "/assets/application.self-09449085dcd027c02a9a16839eec6764c705fc3dbf5cb69f599a10fe6194719f.css?body=1" for 127.0.0.1 at 2016-04-13 15:58:39 -0500
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-13 15:58:55 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (73.5ms)
+Completed 200 OK in 171ms (Views: 147.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/restaurant-18ee1c76bd3e0380872c40bea8df1f80358947e0bc4fb7792d1226086fc556b6.png" for 127.0.0.1 at 2016-04-13 15:58:55 -0500
+
+
+Started GET "/assets/userlog-3577a0c788dac7242fbe0a56ff7953f01ead4fe30543a7b4e110baf9ca5894a5.png" for 127.0.0.1 at 2016-04-13 15:58:55 -0500
+
+
+Started GET "/assets/keylog-ac08bfaddf478c6e907f2275ad66d22a53fee8d2b0e02a3470fdc29845b5219a.png" for 127.0.0.1 at 2016-04-13 15:58:55 -0500
+
+
+Started GET "/assets/twitter-b53c92fe7409cec423e80654fa07899fd3b4b3aa7be02af9bb5a2cfb75cb4573.png" for 127.0.0.1 at 2016-04-13 15:58:55 -0500
+
+
+Started GET "/assets/facebook-2e88491ad4eb1c877466328d6dd214b123e81e49b436c47c13c17c489ccda860.png" for 127.0.0.1 at 2016-04-13 15:58:55 -0500
+
+
+Started GET "/assets/google-886cf101e6348733f5f99edc7e2616230b014f3b444c6c23bfca9b467d6748d9.png" for 127.0.0.1 at 2016-04-13 15:58:55 -0500
+
+
+Started GET "/users/sign_up?role=user" for 127.0.0.1 at 2016-04-13 15:59:02 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Parameters: {"role"=>"user"}
+  Rendered devise/shared/_links.html.erb (21.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (53.0ms)
+Completed 200 OK in 127ms (Views: 125.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up?role=company" for 127.0.0.1 at 2016-04-13 15:59:08 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Parameters: {"role"=>"company"}
+  Rendered devise/shared/_links.html.erb (6.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 129ms (Views: 124.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up?role=user" for 127.0.0.1 at 2016-04-13 15:59:22 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Parameters: {"role"=>"user"}
+  Rendered devise/shared/_links.html.erb (11.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 77ms (Views: 76.5ms | ActiveRecord: 0.0ms)

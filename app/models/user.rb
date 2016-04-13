@@ -26,6 +26,5 @@ class User < ActiveRecord::Base
     message: "%{value} no es un usuario valido" }
 
   enum type_user: [ :user, :company]
-#imagen
-  mount_uploader :img, AvatarUploader
+
 end
