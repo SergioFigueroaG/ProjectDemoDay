@@ -1,10 +1,11 @@
-class ApplicationController < ActionController::Base
+ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   
   before_action :configure_permitted_parameters, if: :devise_controller?
   after_filter :store_location
+  
 
 def store_location
   # store last url - this is needed for post-login redirect to whatever the user last visited.
@@ -24,14 +25,16 @@ end
 def after_sign_in_path_for(resource)
     session[:previous_url] ||   events_path
 end
-
-
+  
   protected
 
-  def configure_permitted_parameters    
-    devise_parameter_sanitizer.for(:sign_up) << [:username, :name, :lastname, :description, :img, :phone,:mobile, :address,
+  def configure_permitted_parameters   
+    devise_parameter_sanitizer.for(:sign_up) << [:username, :name, :type_user]
+
+      devise_parameter_sanitizer.for(:account_update) << [:username, :name, :lastname, :description, :img, :phone,:mobile, :address,
       :company,:type_company,:latitude,:longitude,:facebook,:twitter,:instagram,:youtube,
-      :linkedin,:pinterest,:tumblr,:google_plus]
+      :linkedin,:pinterest,:tumblr,:google_plus,:type_user]
+  
   end
   
 end

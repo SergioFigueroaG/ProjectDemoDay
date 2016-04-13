@@ -1,9 +1,10 @@
 class User < ActiveRecord::Base
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable, :confirmable
-
+#relaciones
   has_many :events
   
   has_many :user_events
@@ -17,5 +18,14 @@ class User < ActiveRecord::Base
 
   has_many :feedbacks
   has_many :feedevents,  through: :feedbacks, :source => 'event'
+#validaciones
+  validates :name, presence: true
+  validates :username, presence: true
   
+  validates :type_user, inclusion: { in: %w(user company),
+    message: "%{value} no es un usuario valido" }
+
+  enum type_user: [ :user, :company]
+#imagen
+  mount_uploader :img, AvatarUploader
 end

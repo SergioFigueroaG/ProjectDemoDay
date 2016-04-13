@@ -6,7 +6,10 @@
   <li><a href="#home3" >a</a></li>
 </ol>
 <section class="homepageone" id="home1">
+
   <%= link_to "login", new_user_session_path %>
+  <%= link_to "r user", new_user_registration_path(role:"user")%>
+  <%= link_to "r company", new_user_registration_path(role:"company") %>
   <!-- <div class="site-wrapper">
     <div class="site-wrapper-inner">
       <div class="cover-container">
@@ -27,6 +30,7 @@
       </div>
     </div>
   </div> -->
+  
 </section>
 <section class="homepageone" id="home2">
   <div style="background-color: red;height:100%">
