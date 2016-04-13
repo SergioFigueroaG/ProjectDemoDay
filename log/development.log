@@ -12432,6 +12432,7 @@ Completed 200 OK in 805ms (Views: 772.3ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/assets/fonts/icomoon/icomoon.woff" for 127.0.0.1 at 2016-04-11 14:39:25 -0500
+<<<<<<< HEAD
 
 
 Started GET "/" for 127.0.0.1 at 2016-04-12 00:26:25 -0500
@@ -13085,6 +13086,11 @@ Migrating to CreateFeedbacks (20160331062539)
   [1m[36m (145.9ms)[0m  [1mcommit transaction[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.7ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
   [1m[36m (0.4ms)[0m  [1m            SELECT sql
+=======
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+>>>>>>> master
             FROM sqlite_master
             WHERE name='index_users_on_reset_password_token' AND type='index'
             UNION ALL
@@ -13092,7 +13098,11 @@ Migrating to CreateFeedbacks (20160331062539)
             FROM sqlite_temp_master
             WHERE name='index_users_on_reset_password_token' AND type='index'
 [0m
+<<<<<<< HEAD
   [1m[35m (0.4ms)[0m              SELECT sql
+=======
+  [1m[35m (0.1ms)[0m              SELECT sql
+>>>>>>> master
             FROM sqlite_master
             WHERE name='index_users_on_email' AND type='index'
             UNION ALL
@@ -13102,6 +13112,7 @@ Migrating to CreateFeedbacks (20160331062539)
 
 
 
+<<<<<<< HEAD
 Started GET "/users" for 127.0.0.1 at 2016-04-12 00:34:23 -0500
 
 ActionController::RoutingError (No route matches [GET] "/users"):
@@ -18957,3 +18968,19 @@ Processing by Devise::RegistrationsController#new as HTML
   Rendered devise/shared/_links.html.erb (11.0ms)
   Rendered devise/registrations/new.html.erb within layouts/application (15.0ms)
 Completed 200 OK in 77ms (Views: 76.5ms | ActiveRecord: 0.0ms)
+=======
+Started GET "/" for 127.0.0.1 at 2016-04-13 15:12:22 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 21344ms (Views: 21314.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.self-6ff86ffe86b6f600271bddf0b8aaa2ffb663f29a51aac8bbc84dfc706d457a3e.css?body=1" for 127.0.0.1 at 2016-04-13 15:12:44 -0500
+
+
+Started GET "/assets/application.self-ef6581bcc645c9915d60dc6e63e1f084bfb97fe6eb7752e2084078e1cffc0923.css?body=1" for 127.0.0.1 at 2016-04-13 15:12:44 -0500
+
+
+Started GET "/assets/fonts/icomoon/icomoon.woff" for 127.0.0.1 at 2016-04-13 15:12:44 -0500
+>>>>>>> master
