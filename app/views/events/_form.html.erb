@@ -12,35 +12,35 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.label :title ,"Titulo"%><br>
+    <%= f.text_field :title ,required:true%>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.label :description,"Descripción" %><br>
+    <%= f.text_area :description,required:true %>
   </div>
   <div class="field">
-    <%= f.label :date_i %><br>
-    <%= f.datetime_select :date_i %>
+    <%= f.label :date_i,"Fecha Inicio" %><br>
+    <%= f.date_select :date_i %>
   </div>
   <div class="field">
-    <%= f.label :date_f %><br>
-    <%= f.datetime_select :date_f %>
+    <%= f.label :date_f,"Fecha Fin" %><br>
+    <%= f.date_select :date_f %>
   </div>
   <div class="field">
-    <%= f.label :hour_i %><br>
-    <%= f.time_select :hour_i %>
+    <%= f.label :hour_i,"Hora Inicio" %><br>
+    <%= f.time_select :hour_i,{ampm: true,minute_step: 15} %>
   </div>
   <div class="field">
-    <%= f.label :hour_f %><br>
-    <%= f.time_select :hour_f %>
+    <%= f.label :hour_f,"Hora Final" %><br>
+    <%= f.time_select :hour_f,{ampm: true,minute_step: 15} %>
   </div>
   <div class="field">
-    <%= f.label :name_place %><br>
-    <%= f.text_field :name_place %>
+    <%= f.label :name_place,"Lugar" %><br>
+    <%= f.text_field :name_place , required:true%>
   </div>
   <div class="field">
-    <%= f.label :address %><br>
+    <%= f.label :address ,"Dirección"%><br>
     <%= f.text_field :address %>
   </div>
   <div class="field">
