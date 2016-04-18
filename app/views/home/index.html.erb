@@ -1,53 +1,44 @@
-
+<!-- Start header -->
+<header id="home-header">
+  <div class="row">
+      <div id="logo" class="col-md-2">
+    <%= image_tag("logo.png", height: '30', alt: 'Logo')%>
+  </div>
+  <div id="button-click" class="login-header col-md-4">
+    <button class="button button-7 button-7h icon-envelope">Iniciar sesion</button>
+  </div>
+  </div>
+</header>   
+<!-- End header -->
 
 <ol class="homeindicator" >
-  <li><a href="#home1"  >a</a></li>
-  <li><a href="#home2" id="clickme">a</a></li>
-  <li><a href="#home3" >a</a></li>
+  <li><a href="#home1"></a></li>
+  <li><a href="#home2"></a></li>
+  <li><a href="#home3"></a></li>
 </ol>
+
 <section class="homepageone" id="home1">
+
+  <div class: "fullscreen-bg_video">
+  <%= video_tag "home/main.mp4", controls: false, autoplay: true, muted: true, loop: true, class:"video-bg", width: "100%",   type: "video/mp4" %>
+  </div>
+
+  
+  <button class="button button-7 button-7h icon-envelope">Iniciar sesion</button>
+
 
   <%= link_to "login", new_user_session_path %>
   <%= link_to "r user", new_user_registration_path(role:"user")%>
   <%= link_to "r company", new_user_registration_path(role:"company") %>
-  <!-- <div class="site-wrapper">
-    <div class="site-wrapper-inner">
-      <div class="cover-container">
 
-        <div class="inner cover">
-          <h1 class="cover-heading">Desparchate</h1>
-          <p class="lead">Cambia tu desparche hoy</p>
-          <p class="lead">
-          </p>
-        </div>
-
-        <div class="mastfoot">
-          <div class="inner">
-            <p class="lead">Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div> -->
   
 </section>
 <section class="homepageone" id="home2">
   <div style="background-color: red;height:100%">
     hola
-    <!--   <ol class="homeindicator">
-        <li><a href="#home1" >a</a></li>
-        <li><a href="#home2" >a</a></li>
-        <li><a href="#home3" >a</a></li>
-      </ol> -->
     </div>
   </section>
   <section class="homepageone" id="home3">
-    l
-    <!-- <ol class="homeindicator">
-      <li><a href="#home1" >a</a></li>
-      <li><a href="#home2" >a</a></li>
-      <li><a href="#home3" >a</a></li>
-    </ol> -->
+    
   </section>
 

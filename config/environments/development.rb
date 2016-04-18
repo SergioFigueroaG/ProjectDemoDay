@@ -45,4 +45,7 @@ Rails.application.configure do
   #configuracion view email in browser
   config.action_mailer.delivery_method = :letter_opener
 
+  #Videos
+  config.assets.paths << "#{Rails.root}/app/assets/videos"
+
 end
