@@ -1,26 +1,31 @@
-$( document ).ready(function() {
-	console.log('si entra 1');
-	$(".photo_upload").change(function(){
-	console.log('si entra');
-    readURL(this);
+$(".photo_upload").change(function(){
+	readURL(this);
 });
 
-	$("#event_need_partner").change(function(){
-    OcultardivE(this);
+$("#event_need_partner").change(function(){
+	div=$("#descolabora");	
+	OcultardivE(this,div);
 });
-
+$("#check_inviteds").change(function(){
+	div=$("#inviteds");	
+	OcultardivE(this,div);
 });
 
 function OcultardivE(check,div){
-	div=$("#descolabora");	
+	
 	if(check.checked){
-		div.show();
-		descripcion=document.getElementById("event_des_partner");
-		descripcion.required = true;
+		div.removeClass('hidden');
+		
+		if(div.attr('id')=="descolabora"){
+			descripcion=document.getElementById("event_des_partner");
+			descripcion.required = true;
+		}
 	}else{
-		div.hide();		
-		descripcion=document.getElementById("event_des_partner");
-		descripcion.required = false;		
+		div.addClass('hidden');	
+		if(div.attr('id')=="descolabora"){	
+			descripcion=document.getElementById("event_des_partner");
+			descripcion.required = false;
+		}		
 	}
 }
 function readURL(input) {
@@ -28,25 +33,10 @@ function readURL(input) {
 		var reader = new FileReader();
 
 		reader.onload = function (e) {
-		$('#img_prev')
-		.attr('src', e.target.result)
-		.width(150)
-		.height(200);
+			$('#img_prev')
+			.attr('src', e.target.result)
 		};
 
 		reader.readAsDataURL(input.files[0]);
 	}
 }
-
-// $( "#form_event" ).validate({
-//     rules: {
-//     	  if Document.getElementById("#descolabora") {
-//            event_des_partner: { required: true }
-//         }else{
-//         	 event_des_partner: { required: false }
-//         }
-//     }
-// });
-
-
-
