@@ -1,0 +1,21 @@
+<div class="row">
+  <aside class="col-md-4">
+  <section >
+      <%=@user.name%>
+    </section>
+    <section >
+      <%= render 'partials/stats' %>
+    </section>
+    <section >
+      <%link_to "Crear Evento", new_event_path %>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <h3>Eventos</h3>
+  <ul>
+    <%@user.events.each do |event| %>
+    <li><%= event.title %></li>
+    <%end%>
+    </ul>
+  </div>
+</div>
