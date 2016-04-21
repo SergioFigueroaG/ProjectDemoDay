@@ -1,34 +1,7 @@
 
 <p id="notice"><%= notice %></p>
-
 <h1>Listing users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>nombre</th>
-      <th>nickname</th>
-      <th>foto</th>      
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.username %></td>
-        <td><%= image_tag(user.img, :alt => "rss feed") %></td>
-        <td><%= link_to 'Show', user %></td>
-        <%if user_signed_in?%>
-          <td><%= render partial: 'follow_form' , 
-          :locals => { user: user } %></td>
-          <%end%>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-
+    <ul>
+      <%= render @users%>
+    </ul>
+    
