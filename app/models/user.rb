@@ -27,4 +27,13 @@ class User < ActiveRecord::Base
 
   enum type_user: [ :user, :company]
 
+  def is_invited(event_id)
+    event = Event.find(event_id)
+    if event.private
+    self.invevents.pluck(:id).include?(event_id)
+    else
+      true
+    end
+  end
+
 end
