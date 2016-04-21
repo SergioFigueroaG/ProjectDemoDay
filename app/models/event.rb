@@ -1,5 +1,9 @@
 class Event < ActiveRecord::Base
 	include SimpleHashtag::Hashtaggable
+	hashtaggable_attribute :description
+
+	mount_uploader :img, EventImgUploader
+
 	belongs_to :user
 
 	has_many :inviteds
@@ -13,12 +17,10 @@ class Event < ActiveRecord::Base
 
 	has_many :feedbacks
 	has_many :userfeed, through: :feedbacks, :source => 'user'
-
-	mount_uploader :img, EventImgUploader
 	
-	hashtaggable_attribute :description
 	#validaciones
-	validates :title,:description,:name_place,:address,:img,:capacity,:user_id, presence: true
+	validates :title,:description,:name_place,:address,:capacity,:user_id, presence: true
 	validates :des_partner, :presence => true, :if => :need_partner
 	validates :capacity, numericality: { greater_than: 0}
+	
 end

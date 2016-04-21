@@ -43,14 +43,19 @@
     <%= f.label :address ,"Dirección"%><br>
     <%= f.text_field :address , required:true%>
   </div>
-  <img id="img_prev" src="#" alt=" " />
+
+   <%= image_tag( urlimg_event(@event), :alt => "rss feed", :id=>"img_prev", height: '200', width: '150') %>
   <div class="field">
     <%= f.label :img %><br>
-        <%= f.file_field :img, required:true , :class => 'photo_upload',onchange:"readURL(this);" %>
+        <%= f.file_field :img, :class => 'photo_upload' %>
   </div>
   <div class="field">
     <%= f.label :private ,"¿Es privado?" %><br>
-    <%= f.check_box :private ,id:"check",name:"check"%>
+    <%= f.check_box :private ,id:"check_inviteds"%>
+  </div>
+  <div class="field hidden" id="inviteds" >
+    <%= f.label :userinviteds %><br>
+    <%= f.collection_check_boxes :userinvited_ids, User.all, :id, :name %>
   </div>
   <!-- <div class="field">
     <%= f.label :n_confirm %><br>
@@ -64,7 +69,7 @@
     <%= f.label :need_partner,"¿Necesitas Colaboradores?" %><br>
     <%= f.check_box :need_partner %>
   </div>
-  <div class="field" id="descolabora" style="display: none;">
+  <div class="field hidden" id="descolabora" >
     <%= f.label :des_partner,"Describe que colaboradores necesitas" %><br>
     <%= f.text_area :des_partner %>
   </div>
