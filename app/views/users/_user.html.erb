@@ -1,0 +1,9 @@
+<li>
+    <%= user.name %>
+    <%= user.username %>
+    <%= image_tag(user.img, :alt => "rss feed") %>
+    <%= link_to 'Show', user %>
+  <%if user_signed_in?%>
+    <%= render partial: 'follow_form' , :locals => { user: user } %>
+  <%end%>
+</li>

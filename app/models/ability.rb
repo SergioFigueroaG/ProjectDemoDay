@@ -5,6 +5,7 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
     user ||= User.new # guest user (not logged in)
+
     if user.type_user.present?
         # can :read, :all
         #can :read, Event if :private == true &&  user.is_invited(:id) == true
@@ -12,15 +13,13 @@ class Ability
         can :read, Event, :private => true,  :userinviteds => { :id => user.id }
         can :read, Event,:private => false
         can :manage, Event, :user_id => user.id        
-    end
-        
-       
-      
+    end      
     # The first argument to `can` is the action you are giving the user
     # permission to do.
     # If you pass :manage it will apply to every action. Other common actions
-    # 
-    # here are :read, :create, :update and :deso_troy.
+
+    # here are :read, :create, :update and :destroy.
+
     #
     # The second argument is the resource the user can perform the action on.
     # If you pass :all it will apply to every resource. Otherwise pass a Ruby
