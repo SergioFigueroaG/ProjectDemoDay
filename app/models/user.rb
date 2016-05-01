@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :events
   
   has_many :user_events
-  has_many :calevents, through: :user_events, :source => 'event'
+  has_many :calevents, through: :user_events, source: "event"
 
   has_many :inviteds
   has_many :invevents,  through: :inviteds, :source => 'event'
@@ -51,5 +51,14 @@ class User < ActiveRecord::Base
   # Returns true if the current user is following the other user.
   def following?(other_user)
      following.include?(other_user)
+  end
+   def like_event?(event)     
+     calevents.includes(:user_events).where(user_events: { like: true }).include?(event)
+  end
+   def go_event?(event)     
+     calevents.includes(:user_events).where(user_events: { state: true }).include?(event)
+  end
+  def destroy_calevents(event_id)     
+     user_events.find_by(event_id: event_id).destroy
   end
 end

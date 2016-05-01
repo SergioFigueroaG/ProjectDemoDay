@@ -1,0 +1,9 @@
+<% unless current_user==@event.user%>
+	<div id="state">
+		<% if current_user.go_event?(@event) %>
+			<%= render partial: "destroystate" -%>
+		<% else %>
+			<%= render partial: "state" -%>
+		<% end %>
+	</div>
+<% end %>

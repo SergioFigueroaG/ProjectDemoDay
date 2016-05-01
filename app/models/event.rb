@@ -1,4 +1,7 @@
 class Event < ActiveRecord::Base
+ # attr_accessible :invited_tokens
+ attr_reader :userinvited_id
+
 	include SimpleHashtag::Hashtaggable
 	hashtaggable_attribute :description
 
@@ -18,9 +21,16 @@ class Event < ActiveRecord::Base
 	has_many :feedbacks
 	has_many :userfeed, through: :feedbacks, :source => 'user'
 	
+	
+
 	#validaciones
 	validates :title,:description,:name_place,:address,:capacity,:user_id, presence: true
 	validates :des_partner, :presence => true, :if => :need_partner
 	validates :capacity, numericality: { greater_than: 0}
 	
+
+ def userinvited_id=(tokens)
+    self.userinvited_ids = Invited.ids_from_tokens(tokens)
+ end
+ 
 end

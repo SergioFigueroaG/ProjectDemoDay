@@ -13,9 +13,11 @@
 
 //= require jquery
 //= require jquery_ujs
+//= require jquery.tokeninput
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require classie
 //= require modernizr.custom
 //= require button
 //= require events
+

@@ -15,7 +15,8 @@
  *= require_self
  *= require component
  *= require cover
- *= require signin
+ *= require signin 
+ *= require token-input-facebook
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";

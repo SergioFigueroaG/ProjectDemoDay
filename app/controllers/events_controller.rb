@@ -41,6 +41,7 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1.json
   def update
     respond_to do |format|
+      
       if @event.update(event_params)
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
         format.json { render :show, status: :ok, location: @event }
@@ -61,7 +62,49 @@ class EventsController < ApplicationController
     end
   end
 
-  private
+  def invited_users
+    @inviteds = User.where("name like ?", "%#{params[:q]}%")
+    respond_to do |format|
+      format.html
+      format.json { render :json => @inviteds.map(&:attributes) }
+    end
+  end
+  def like
+     @event = Event.find(params[:id])
+     if(current_user.calevents.include?(@event))
+         current_user.user_events.find_by(event_id: @event.id).update(like:true)
+     else 
+       current_user.user_events.create(event_id:@event.id,like: true)  
+     end
+  end
+  def unlike
+     @event = Event.find(params[:id])
+     if(current_user.go_event?(@event))
+         current_user.user_events.find_by(event_id: @event.id).update(like:false)
+     else 
+         current_user.destroy_calevents(@event.id)
+     end
+  end
+  def state
+    @event = Event.find(params[:id])
+     if(current_user.calevents.include?(@event))
+         current_user.user_events.find_by(event_id: @event.id).update(state:true)
+     else
+       current_user.user_events.create(event_id:@event.id,state: true)  
+     end
+    
+  end
+  def destroystate
+     @event = Event.find(params[:id])
+     if(current_user.like_event?(@event))
+         current_user.user_events.find_by(event_id: @event.id).update(state:false)
+     else 
+         current_user.destroy_calevents(@event.id)
+     end
+    
+  end
+
+    private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
       @event = Event.find(params[:id])
@@ -70,6 +113,6 @@ class EventsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
       params.require(:event).permit(:title, :description, :date_i, :date_f, :hour_i, :hour_f, :name_place, :address, :img, :private, 
-                     :n_confirm, :capacity, :need_partner, :des_partner, :user_id, {userinvited_ids: []})
+       :n_confirm, :capacity, :need_partner, :des_partner, :user_id, :userinvited_id )
     end
-end
+  end

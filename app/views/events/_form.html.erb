@@ -53,9 +53,9 @@
     <%= f.label :private ,"¿Es privado?" %><br>
     <%= f.check_box :private ,id:"check_inviteds"%>
   </div>
-  <div class="field hidden" id="inviteds" >
-    <%= f.label :userinviteds %><br>
-    <%= f.collection_check_boxes :userinvited_ids, User.all, :id, :name %>
+  <div class="field <%= "hidden" unless @event.private %>" id="inviteds" >
+    <%= f.label :userinvited_id %><br>
+    <%= f.text_field :userinvited_id, "data-pre" => @event.userinviteds.map(&:attributes).to_json %>        
   </div>
   <!-- <div class="field">
     <%= f.label :n_confirm %><br>
@@ -69,7 +69,7 @@
     <%= f.label :need_partner,"¿Necesitas Colaboradores?" %><br>
     <%= f.check_box :need_partner %>
   </div>
-  <div class="field hidden" id="descolabora" >
+  <div class="field  <%= "hidden " unless @event.need_partner %>" id="descolabora" >
     <%= f.label :des_partner,"Describe que colaboradores necesitas" %><br>
     <%= f.text_area :des_partner %>
   </div>

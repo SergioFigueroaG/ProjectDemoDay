@@ -1,0 +1,9 @@
+<% unless current_user==@event.user%>
+	<div id="like">
+		<% if current_user.like_event?(@event) %>
+			<%= render partial: "unlike" -%>
+		<% else %>
+			<%= render partial: "like" -%>
+		<% end %>
+	</div>
+<% end %>

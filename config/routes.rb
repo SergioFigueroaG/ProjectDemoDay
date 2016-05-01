@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
   get "hashtags/:hashtag",   to: "hashtags#show",      as: :hashtag
   get "hashtags",            to: "hashtags#index",     as: :hashtags
+  get "invited_users",   to: "events#invited_users",      as: :invited_users
   resources :inviteds
   resources :partner_events
-  resources :events
+  resources :events do 
+    member do
+      post :like, :unlike, :state,:destroystate
+    end
+   end 
+  
   devise_for :users
    resources :users , only: [:index, :show] do
     member do

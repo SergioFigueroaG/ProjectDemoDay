@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419062054) do
+ActiveRecord::Schema.define(version: 20160501044200) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 20160419062054) do
   create_table "user_events", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "event_id"
-    t.integer  "state"
+    t.boolean  "state"
     t.boolean  "like"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
